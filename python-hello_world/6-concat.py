@@ -2,4 +2,4 @@
 str1 = "Holberton"
 str2 = "School"
 base = str1 +' '+ str2
-print(f'Welcome to {base}!')
+print('Welcome to {}!'.format(base))
