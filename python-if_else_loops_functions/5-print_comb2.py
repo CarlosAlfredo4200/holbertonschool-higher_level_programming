@@ -1,6 +1,3 @@
 #!/usr/bin/python3
-for item in range(99):
-    if len(str(item)) == 1:
-        print('0{}, '.format(item), end="")
-    else:
-        print('{}, '.format(item), end="")
+for item in range(100):
+    print("{:02d}".format(item), end=", " if item < 99 else "\n")
