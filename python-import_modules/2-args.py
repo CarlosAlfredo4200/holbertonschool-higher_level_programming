@@ -7,7 +7,6 @@ def print_arguments(argv):
 
     if num_arguments == 0:
         print("0 arguments.")
-        print(".")
     else:
         print(f"{num_arguments} argument(s):")
         for i in range(num_arguments):
