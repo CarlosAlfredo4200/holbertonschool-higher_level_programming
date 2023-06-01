@@ -10,5 +10,5 @@ if __name__ == "__main__":
         print("1 argument:")
     else:
         print(f"{num_arguments} argument(s):")
-        for item in range(num_arguments):
-            print(f"{item+1}: {sys.argv[item+1]}")
+    for item in range(num_arguments):
+        print(f"{item+1}: {sys.argv[item+1]}")
