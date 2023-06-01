@@ -9,6 +9,6 @@ if __name__ == "__main__":
     elif num_arguments == 0:
         print("1 argument:")
     else:
-        print(f"{num_arguments} argument(s):")
+        print("{} arguments:".format(num_arguments))
     for item in range(num_arguments):
         print(f"{item+1}: {sys.argv[item+1]}")
