@@ -1,23 +1,27 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    def division(x, y): return x / y if y != 0 else 0
     resultList = []
+    
 
     for item in range(list_length):
         try:
-            dataList1 = my_list_1[item]
-            dataList2 = my_list_2[item]
-            resultList.append(division(dataList1, dataList2))
-        except ZeroDivisionError:
-            print("division by 0")
-            resultList.append(0)
-
+            operacion = (my_list_1[item] / my_list_2[item])
+            
         except TypeError:
+            operacion = 0
             print("wrong type")
-            resultList.append(0)
-
+            
+        except ZeroDivisionError:
+            operacion = 0         
+            print("division by 0")
+            
+            
         except IndexError:
+            operacion = 0
             print("out of range")
-            resultList.append(0)
+            
+        finally:
+            resultList.append(operacion)
+            
 
     return resultList
