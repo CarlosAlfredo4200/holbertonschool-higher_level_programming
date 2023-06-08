@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    def division(x, y): return x / y if y != 0 else 0
+    divide = lambda x, y: x / y if y != 0 else 0
 
     result_list = []
+    error_messages = []  
 
     for i in range(list_length):
         try:
@@ -10,19 +11,22 @@ def list_division(my_list_1, my_list_2, list_length):
             element_2 = my_list_2[i]
 
             if not isinstance(element_1, (int, float)) or not isinstance(element_2, (int, float)):
-                print("wrong type")
+                error_messages.append("wrong type")
                 result_list.append(0)
                 continue
 
             try:
-                result_list.append(division(element_1, element_2))
-                
+                result_list.append(divide(element_1, element_2))
             except ZeroDivisionError:
-                print("division by 0")
+                error_messages.append("division by 0")
                 result_list.append(0)
 
         except IndexError:
-            print("out of range")
+            error_messages.append("out of range")
             result_list.append(0)
+
+    # Imprimir los mensajes de error
+    for message in error_messages:
+        print(message)
 
     return result_list
