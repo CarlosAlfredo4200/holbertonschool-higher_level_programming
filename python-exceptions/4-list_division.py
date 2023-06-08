@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def list_division(my_list_1, my_list_2, list_length):
-    division = lambda x, y: x / y if y != 0 else 0
+    def division(x, y): return x / y if y != 0 else 0
 
     result_list = []
 
@@ -14,7 +14,12 @@ def list_division(my_list_1, my_list_2, list_length):
                 result_list.append(0)
                 continue
 
-            result_list.append(division(element_1, element_2))
+            try:
+                result_list.append(division(element_1, element_2))
+                
+            except ZeroDivisionError:
+                print("division by 0")
+                result_list.append(0)
 
         except IndexError:
             print("out of range")
