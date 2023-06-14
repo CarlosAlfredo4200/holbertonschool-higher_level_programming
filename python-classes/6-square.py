@@ -66,7 +66,7 @@ class Square:
         return area
 
     def my_print(self):
-        if self.__size is 0:
+        if self.__size == 0:
             print()
         else:
             for item in range(0, self.__position[1]):
