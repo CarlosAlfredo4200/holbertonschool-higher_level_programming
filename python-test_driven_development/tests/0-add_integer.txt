@@ -39,7 +39,18 @@ Now test:
     Traceback (most recent call last):
     ...
     TypeError: a must be an integer
-    
 
+     
+    Test 08: One value infinity passed  
+    >>> add_integer(float('inf'), 0)
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
+
+    Test 09: value NAN passed  
+    >>> add_integer(0, float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: cannot convert float NaN to integer
     
      
