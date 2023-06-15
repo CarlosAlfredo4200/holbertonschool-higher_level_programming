@@ -33,3 +33,10 @@ Now test:
     Traceback (most recent call last):
     ...
     TypeError: div must be a number
+
+    Test 05: One matrix dot list
+    >>> matrix = 'hello'
+    >>> matrix_divided(matrix, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: matrix must be a matrix (list of lists) of integers/floats
