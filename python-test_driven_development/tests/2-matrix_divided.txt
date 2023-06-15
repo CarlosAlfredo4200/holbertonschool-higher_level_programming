@@ -22,7 +22,7 @@ Now test:
     ...
     ZeroDivisionError: division by zero
 
-    Test 03: One matrix divide zero tring
+    Test 03: One matrix divide  tring
     >>> matrix_divided(matrix, 'hello')
     Traceback (most recent call last):
     ...
