@@ -7,8 +7,6 @@ def print_square(size):
 
     Prints a square made up of '#' characters with a size of 'size'.
 
-    Args:
-        size (_type_): _description_
     """
 
     if not isinstance(size, (int)):
