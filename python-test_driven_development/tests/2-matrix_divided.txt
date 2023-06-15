@@ -27,3 +27,9 @@ Now test:
     Traceback (most recent call last):
     ...
     TypeError: div must be a number
+
+    Test 04: One matrix divide None
+    >>> matrix_divided(matrix, None)
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
