@@ -1,0 +1,19 @@
+The ``4-print_square`` module
+============================
+Using ``print_square``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the print_square function in the 4-print_square module.
+First import ``print_square`` from the ``4-print_square`` module:
+
+    Test 00 Open 4-print_square
+    >>> print_square = __import__('4-print_square').print_square
+
+
+Now test:
+    Test 01: size is integer > 0 passed
+    >>> print_square(3)
+    ###
+    ###
+    ###
+    
