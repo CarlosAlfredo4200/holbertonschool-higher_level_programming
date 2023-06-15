@@ -28,3 +28,9 @@ Now test:
     Traceback (most recent call last):
     ...
     TypeError: first_name must be a string
+
+    Test 03: test the two arguments being numbers
+    >>> say_my_name(3, 2)
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
