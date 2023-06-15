@@ -14,3 +14,4 @@ ZeroDivisionError: Se produce cuando se intenta dividir un número entre cero.
 AttributeError: Se produce cuando se intenta acceder a un atributo que no existe en un objeto.
 OverflowError: Se produce cuando se realiza una operación que resulta en un desbordamiento de capacidad, como cuando un número es demasiado grande para ser representado.
 NameError: Se produce cuando se intenta utilizar una variable o un nombre que no ha sido definido.
+
