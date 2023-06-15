@@ -23,7 +23,7 @@ Now test:
     ...
     TypeError: first_name must be a string
 
-    Test 02: One None passed
+    Test 03: One None and str passed
     >>> say_my_name(None, 'hello')
     Traceback (most recent call last):
     ...
