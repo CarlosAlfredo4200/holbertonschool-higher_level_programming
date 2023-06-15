@@ -12,8 +12,8 @@ First import ``text_indentation`` from the ``5-text_indentation`` module:
 
 Now test:
     Test 01: text passed
-    >>> text_indentation("Holberton")
-    Holberton
+    >>> text_indentation("Carlos")
+    Carlos
 
 
     Test 02: integer arguments passed
@@ -25,3 +25,10 @@ Now test:
     >>> text_indentation()
     Traceback (most recent call last):
     TypeError: text_indentation() missing 1 required positional argument: 'text'
+
+    Test 04: detect line breaks passed
+    >>> text_indentation("Hello\n\nThere.")
+    Hello
+    <BLANKLINE>
+    There.
+    <BLANKLINE>
