@@ -31,19 +31,7 @@ Now test:
     TypeError: print_square() missing 1 required positional argument: 'size'
 
 
-    Test 04: size is string passed
-    try:
-        print_square("a")
-    except Exception as e:
-        print(f"Test passed: {e}")
-    else:
-        print("Test failed: size is a string.")
-
-
-    Test 05: size is string passed
-    try:
-        print_square(None)
-    except Exception as e:
-        print(f"Test passed: {e}")
-    else:
-        print("Test failed: size is None.")
+    Test 04: string arguments passed
+    >>> print_square("Hello")
+    Traceback (most recent call last):
+    TypeError: size must be an integer
