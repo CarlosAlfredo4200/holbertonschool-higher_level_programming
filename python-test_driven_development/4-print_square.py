@@ -7,7 +7,6 @@ def print_square(size):
 
     Prints a square made up of '#' characters with a size of 'size'.
 
-
     """
 
     if not isinstance(size, (int)):
@@ -16,7 +15,5 @@ def print_square(size):
     if size < 0:
         raise ValueError("size must be >= 0")
 
-    for i in range(size):
-        for j in range(size):
-            print('#', end='')
-        print()
+    for item in range(size):
+        print("#" * size)

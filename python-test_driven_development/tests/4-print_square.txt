@@ -35,3 +35,8 @@ Now test:
     >>> print_square("Hello")
     Traceback (most recent call last):
     TypeError: size must be an integer
+
+    Test 05: negative size passed
+    >>> print_square(-2)
+    Traceback (most recent call last):
+    ValueError: size must be >= 0
