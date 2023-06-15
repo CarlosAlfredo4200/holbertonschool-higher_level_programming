@@ -21,3 +21,9 @@ Now test:
     Traceback (most recent call last):
     ...
     ZeroDivisionError: division by zero
+
+    Test 03: One matrix divide zero tring
+    >>> matrix_divided(matrix, 'hello')
+    Traceback (most recent call last):
+    ...
+    TypeError: div must be a number
