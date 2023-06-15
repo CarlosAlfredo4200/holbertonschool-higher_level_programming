@@ -16,3 +16,9 @@ Now test:
     Traceback (most recent call last):
     ...
     TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+    Test 02: One integer with str passed
+    >>> say_my_name(4, 'hello')
+    Traceback (most recent call last):
+    ...
+    TypeError: first_name must be a string
