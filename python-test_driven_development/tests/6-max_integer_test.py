@@ -5,10 +5,13 @@ import unittest
 max_integer = __import__('6-max_integer').max_integer
 
 class TestMaxInteger(unittest.TestCase):
+    """
+    Test a function max_integer()
+    """
 
     def test_len(self):
-        arr = [1, 2, 3, 4]
-        self.assertEqual(max_integer(arr), 4)
+        list = [1, 2, 3, 4]
+        self.assertEqual(max_integer(list), 4)
 
     def test_string(self):
         list = [1,'hello']
@@ -18,8 +21,11 @@ class TestMaxInteger(unittest.TestCase):
     def test_empty_list(self):
         """Checks the case of an empty list
         """
-        _list = []
-        self.assertEqual(max_integer(_list), None)
+        list = []
+        self.assertEqual(max_integer(list), None)
+        
+    def test_void_arg(self):
+        self.assertEqual(max_integer(), None)
     
 if __name__ == '__main__':
     unittest.main()
