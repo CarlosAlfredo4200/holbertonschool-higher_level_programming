@@ -12,6 +12,12 @@ class TestMaxInteger(unittest.TestCase):
         list = [1,'hello']
         with self.assertRaises(TypeError):
             max_integer(list)
+            
+    def test_empty_list(self):
+        """Checks the case of an empty list
+        """
+        _list = []
+        self.assertEqual(max_integer(_list), None)
     
 if __name__ == '__main__':
     unittest.main()
