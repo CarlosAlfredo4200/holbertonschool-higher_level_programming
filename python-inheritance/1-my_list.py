@@ -9,6 +9,7 @@ class MyList(list):
         list: newList ascending sort
 
         """
+    pass
 
     def print_sorted(self):
         newList = sorted(self)
