@@ -1,23 +1,29 @@
-The ``1-my_list`` module
+The ``1-my_list.py`` module
 ============================
-Using ``add_integer``
+Using ``MyList``
 ---------------------
 This is a text file in reStructuredText format.
-It contains a test for the add_integer function in the 1-my_list module.
-First import ``add_integer`` from the ``1-my_list`` module:
+It contains a test for the MyList function in the 1-my_list.py module.
+First import ``MyList`` from the ``1-my_list.py`` module:
 
-    Test 00 Open 1-my_list
-    >>> MyList = __import__('1-my_list').MyList
+   Test 00 Open 1-my_list.py
+   >>> MyList = __import__('1-my_list').MyList
+   >>> my_list = MyList()
 
 Now test:
-    Test 01: returns the list sorted.
-    >>> my_list = MyList()
-    >>> isinstance(my_list, list)
-    True
-    >>> my_list.print_sorted()
-    [] 
- 
+   Test 01: Two positive integers passed
+   >>> print(type(my_list))
+   <class '1-my_list.MyList'>
 
+   Test 02: list passed
+   >>> my_list = MyList([1, 2, 3])
+   >>> print(my_list)
+   [1, 2, 3]
+
+   Test 03: list passed
+   >>> my_list = MyList(None)
+   Traceback (most recent call last):
+   TypeError: 'NoneType' object is not iterable
 
   
 
