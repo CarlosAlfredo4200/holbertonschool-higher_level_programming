@@ -14,4 +14,4 @@ First import ``print_sorted`` from the ``1-my_list.py`` module:
 Now test:
     Test 01: list passed
     >>> print_sorted(list)
-    [1, 2, 3, 4, 5]
+    [1, 2, 3, 4, 5] 
