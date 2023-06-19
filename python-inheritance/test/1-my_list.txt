@@ -6,12 +6,13 @@ This is a text file in reStructuredText format.
 It contains a test for the print_sorted function in the 1-my_list.py module.
 First import ``print_sorted`` from the ``1-my_list.py`` module:
 
-    Test 00 Open 1-my_list.py
-    >>> print_sorted = __import__('1-my_list.py').print_sorted
-
-    >>> list = [1, 4, 2, 3, 5]
-
-Now test:
-    Test 01: list passed
-    >>> print_sorted(list)
-    [1, 2, 3, 4, 5] 
+Numbers:
+========
+''print_sorted()'' returns the list sorted.
+:: with positives integers
+   >>> MyList = __import__('1-my_list').MyList
+   >>> my_list = MyList()
+   >>> isinstance(my_list, list)
+   True
+   >>> my_list.print_sorted()
+   [] 
