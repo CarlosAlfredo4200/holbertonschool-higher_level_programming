@@ -1,20 +1,24 @@
-============================================
-How to use 1-my_list.txt
-============================================
+The ``1-my_list`` module
+============================
+Using ``add_integer``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the add_integer function in the 1-my_list module.
+First import ``add_integer`` from the ``1-my_list`` module:
 
-This library is very simple, since it only has one function called
- ''print_sorted()''.
-Numbers:
+    Test 00 Open 1-my_list
+    >>> MyList = __import__('1-my_list').MyList
+
+Now test:
+    Test 01: returns the list sorted.
+    >>> my_list = MyList()
+    >>> isinstance(my_list, list)
+    True
+    >>> my_list.print_sorted()
+    [] 
+ 
 
 
-========
-''print_sorted()'' returns the list sorted.
-:: with positives integers
-   >>> MyList = __import__('1-my_list').MyList
-   >>> my_list = MyList()
-   >>> isinstance(my_list, list)
-   True
-   >>> my_list.print_sorted()
-   [] 
+  
 
 
