@@ -1,0 +1,17 @@
+The ``1-my_list.py`` module
+============================
+Using ``my_list``
+---------------------
+This is a text file in reStructuredText format.
+It contains a test for the my_list function in the 1-my_list.py module.
+First import ``my_list`` from the ``1-my_list.py`` module:
+
+    Test 00 Open 1-my_list.py
+    >>> my_list = __import__('1-my_list.py').my_list
+
+    >>> list = [1, 4, 2, 3, 5]
+
+Now test:
+    Test 01: list passed
+    >>> my_list(list)
+    [1, 2, 3, 4, 5]
