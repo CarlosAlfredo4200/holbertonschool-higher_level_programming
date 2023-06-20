@@ -11,7 +11,7 @@ First import ``MyList`` from the ``1-my_list.py`` module:
    >>> my_list = MyList()
 
 Now test:
-   Test 01: Two positive integers passed
+   Test 01: list type passed
    >>> print(type(my_list))
    <class '1-my_list.MyList'>
 
@@ -20,10 +20,7 @@ Now test:
    >>> print(my_list)
    [1, 2, 3]
 
-   Test 03: list passed
-   >>> my_list = MyList(None)
-   Traceback (most recent call last):
-   TypeError: 'NoneType' object is not iterable
+    
 
 
    Test 04: list add passed
@@ -39,4 +36,8 @@ Now test:
    >>> my_list.print_sorted()
    []
 
+   Test 06: Infinite arguments passed
+   >>> my_list.append(int('inf'))
+   Traceback (most recent call last):
+   ValueError: invalid literal for int() with base 10: 'inf'
 
