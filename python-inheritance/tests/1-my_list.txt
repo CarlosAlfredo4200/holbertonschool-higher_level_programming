@@ -58,3 +58,9 @@ Now test:
    >>> my_list.append(-15)
    >>> my_list.print_sorted()
    [-15, 1, 2, 3]
+
+
+   Test 09: list None passed
+   >>> my_list.append(None)
+   Traceback (most recent call last):
+   TypeError: 'None' object is not iterable
