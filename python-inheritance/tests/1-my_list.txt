@@ -44,3 +44,10 @@ Now test:
    Traceback (most recent call last):
    ValueError: invalid literal for int() with base 10: 'inf'
 
+   Test 07: positives integers passed
+   >>> MyList = __import__('1-my_list').MyList
+   >>> my_list = MyList()
+   >>> isinstance(my_list, list)
+   True
+   >>> my_list.print_sorted()
+   []
