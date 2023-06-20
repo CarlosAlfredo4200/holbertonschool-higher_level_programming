@@ -31,6 +31,10 @@ Now use it:
 	Traceback (most recent call last):
 	TypeError: data must be an integer
 
+	>>> bg.integer_validator("data", (4,))
+	Traceback (most recent call last):
+	TypeError: data must be an integer
+
 	>>> bg.integer_validator("data", None)
 	Traceback (most recent call last):
 	TypeError: data must be an integer
