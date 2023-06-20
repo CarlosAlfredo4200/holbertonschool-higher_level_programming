@@ -18,6 +18,14 @@ Now use it:
 	Traceback (most recent call last):
 	Exception: area() is not implemented
 
+	bg.integer_validator("data", ())
+	Traceback (most recent call last):
+    TypeError: data must be an integer
+
+	bg.integer_validator("data", "hello")
+	Traceback (most recent call last):
+    TypeError: data must be an integer
+
 	>>> bg.integer_validator("data", 3.14)
 	Traceback (most recent call last):
 	TypeError: data must be an integer
