@@ -18,44 +18,44 @@ Now use it:
 	Traceback (most recent call last):
 	Exception: area() is not implemented
 
-	>>> bg.integer_validator("betty", 3.14)
+	>>> bg.integer_validator("myClass", 3.14)
 	Traceback (most recent call last):
-	TypeError: betty must be an integer
+	TypeError: myClass must be an integer
 
-	>>> bg.integer_validator("betty", "holberton")
+	>>> bg.integer_validator("myClass", "holberton")
 	Traceback (most recent call last):
-	TypeError: betty must be an integer
+	TypeError: myClass must be an integer
 
-	>>> bg.integer_validator("betty", True)
+	>>> bg.integer_validator("myClass", True)
 	Traceback (most recent call last):
-	TypeError: betty must be an integer
+	TypeError: myClass must be an integer
 
-	>>> bg.integer_validator("betty", None)
+	>>> bg.integer_validator("myClass", None)
 	Traceback (most recent call last):
-	TypeError: betty must be an integer
+	TypeError: myClass must be an integer
 
-	>>> bg.integer_validator("betty", {1, 2, 3})
+	>>> bg.integer_validator("myClass", {1, 2, 3})
 	Traceback (most recent call last):
-	TypeError: betty must be an integer
+	TypeError: myClass must be an integer
 
-	>>> bg.integer_validator("betty", (1, 2, 3))
+	>>> bg.integer_validator("myClass", (1, 2, 3))
 	Traceback (most recent call last):
-	TypeError: betty must be an integer
+	TypeError: myClass must be an integer
 
-	>>> bg.integer_validator("betty", [1, 2, 3])
+	>>> bg.integer_validator("myClass", [1, 2, 3])
 	Traceback (most recent call last):
-	TypeError: betty must be an integer
+	TypeError: myClass must be an integer
 
-	>>> bg.integer_validator("betty", 0)
+	>>> bg.integer_validator("myClass", 0)
 	Traceback (most recent call last):
-	ValueError: betty must be greater than 0
+	ValueError: myClass must be greater than 0
 
-	>>> bg.integer_validator("betty", -98)
+	>>> bg.integer_validator("myClass", -98)
 	Traceback (most recent call last):
-	ValueError: betty must be greater than 0
+	ValueError: myClass must be greater than 0
 
-	>>> bg.integer_validator("betty", 98)
+	>>> bg.integer_validator("myClass", 98)
 
-	>>> bg.integer_validator("betty", (98))
+	>>> bg.integer_validator("myClass", (98))
 
 	>>> bg.integer_validator("", 98)
