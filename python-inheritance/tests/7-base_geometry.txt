@@ -6,15 +6,20 @@ This is a text file in reStructuredText format.
 It contains a test for the BaseGeometry function in the 7-base_geometry.py module.
 First import ``BaseGeometry`` from the ``7-base_geometry.py`` module:
 
-   Test 00 Open 7-base_geometry.py
    >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-   >>> baseGeo = BaseGeometry()
+   >>> bg = BaseGeometry()
     
 
 Now test:
-   Test 01: list infinite integer passed
-   >>> baseGeo.integer_validator("infnumber", int('inf'))
+   Test 01: with infinite integer
+   >>> bg.integer_validator("infnumber", int('inf'))
    Traceback (most recent call last):
    ValueError: invalid literal for int() with base 10: 'inf'
 
+   Test 02: with negative integer
+   >>> bg.integer_validator("number", -12)
+   Traceback (most recent call last):
+   ValueError: number must be greater than 0
 
+   Test 02: with positive integer
+   >>> bg.integer_validator("my_int", 12)
