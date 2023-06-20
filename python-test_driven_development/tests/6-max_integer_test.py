@@ -10,7 +10,7 @@ class TestMaxInteger(unittest.TestCase):
     Test a function max_integer()
     """
 
-    def test_upper(self):
+    def test_maxNumber(self):
         self.assertEqual(max_integer([6, 7, 8, 9]), 9)
 
     def test_none(self):
@@ -27,6 +27,9 @@ class TestMaxInteger(unittest.TestCase):
 
     def test_middle(self):
         self.assertEqual(max_integer([1, 3, 8, 2, 6]), 8)
+        
+    def name(args):
+     pass
 
 
 if __name__ == '__main__':
