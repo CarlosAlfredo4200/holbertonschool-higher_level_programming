@@ -21,7 +21,10 @@ Now test:
    [1, 2, 3]
 
     
-
+   Test 03: list NULL passed
+   >>> my_list.append(NULL)
+   Traceback (most recent call last):
+   NameError: name 'NULL' is not defined
 
    Test 04: list add passed
    >>> my_list = MyList()
