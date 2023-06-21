@@ -25,11 +25,6 @@ class Square(Rectangle):
         Raises:
             ValueError: If size is not a positive integer.
         """
-        super().__init__(size, size)
         self.integer_validator('size', size)
+        super().__init__(size, size)
         self.__size = size
-
-    def area(self):
-        """rectangle area"""
-
-        return self.__size ** 2
