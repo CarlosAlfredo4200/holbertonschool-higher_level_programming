@@ -15,7 +15,7 @@ argc = len(sys.argv)
 
 if argc > 1:
     for i in range(1, argc):
-        lst.append(sys.argv[i])
+        data.append(sys.argv[i])
 
 """ Save the updated data to the file"""
 save_to_json_file(data, "add_item.json")
