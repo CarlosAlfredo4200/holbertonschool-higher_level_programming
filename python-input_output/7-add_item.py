@@ -5,29 +5,32 @@
     a text file, using a JSON representation.
 """
 import sys
-from typing import List
+import json
 save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
 load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 
-def add_arguments_to_list(arguments: List[str]) -> List[str]:
+def create_file_list():
+    """Adds all arguments to a Python list, and then save them to a file"""
+    obj_9 = load_from_json_file("add_item.json")
+
+    for i in range(1, len(sys.argv)):
+        obj_9.append(str(sys.argv[i]))
+
+    save_to_json_file(obj_9, "add_item.json")
+
+
+if len(sys.argv) < 2:
     try:
-         
-        existing_list = load_from_json_file("add_item.json")
-    except FileNotFoundError:
-        existing_list = []
-
-     
-    updated_list = existing_list + arguments
-
-     
-    save_to_json_file(updated_list, "add_item.json")
-
-    return updated_list
-
-
-if __name__ == "__main__":
-     
-    arguments = sys.argv[1:]
-    added_items = add_arguments_to_list(arguments)
-    print("Items added to the list:", added_items)
+        f = open("add_item.json")
+        f.close()
+    except IOError:
+        save_to_json_file([], "add_item.json")
+else:
+    try:
+        f = open("add_item.json")
+        f.close()
+        create_file_list()
+    except IOError:
+        save_to_json_file([], "add_item.json")
+        create_file_list()
