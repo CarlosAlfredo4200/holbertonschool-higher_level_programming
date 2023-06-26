@@ -36,10 +36,13 @@ class Rectangle(Base):
         Setter method for the width attribute.
 
         """
-        if isinstance(value, int) and value > 0:
-            self.__width = value
+        if isinstance(value, int):
+            if value > 0:
+                self.__width = value
+            else:
+                raise ValueError("width must be > 0")
         else:
-            raise ValueError("Width must be a positive integer.")
+            raise TypeError("width must be an integer")
 
     @property
     def height(self):
@@ -54,10 +57,13 @@ class Rectangle(Base):
         Setter method for the height attribute.
 
         """
-        if isinstance(value, int) and value > 0:
-            self.__height = value
+        if isinstance(value, int):
+            if value > 0:
+                self.__height = value
+            else:
+                raise ValueError("height must be > 0")
         else:
-            raise ValueError("Height must be a positive integer.")
+            raise TypeError("height must be an integer")
 
     @property
     def x(self):
@@ -73,9 +79,12 @@ class Rectangle(Base):
 
         """
         if isinstance(value, int):
-            self.__x = value
+            if value >= 0:
+                self.__x = value
+            else:
+                raise ValueError("x must be >= 0")
         else:
-            raise ValueError("X-coordinate must be an integer.")
+            raise TypeError("x must be an integer")
 
     @property
     def y(self):
@@ -91,6 +100,9 @@ class Rectangle(Base):
 
         """
         if isinstance(value, int):
-            self.__y = value
+            if value >= 0:
+                self.__y = value
+            else:
+                raise ValueError("y must be >= 0")
         else:
-            raise ValueError("Y-coordinate must be an integer.")
+            raise TypeError("y must be an integer")
