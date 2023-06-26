@@ -10,7 +10,7 @@ class TestBase(unittest.TestCase):
     def testBase_default(self, b):
         self.assertEqual(b.id, 1)
         
-    def testBase_default(self, b):
+    def testBase_default(self, b1):
         self.assertEqual(b1.id(None), 1)
         
      
