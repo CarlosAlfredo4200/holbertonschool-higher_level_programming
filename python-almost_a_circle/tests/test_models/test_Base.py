@@ -6,7 +6,7 @@ class TestBase(unittest.TestCase):
     
     
     def testBase_default(self):
-        self.assertEqual(Base(), 1)
+        self.assertEqual(Base(None))
         
         
 if __name__ == '__main__':
