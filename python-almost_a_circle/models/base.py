@@ -2,7 +2,8 @@
 
 class Base:
     """
-    This is the base class that manages the id attribute for all other classes in the project.
+    This is the base class that manages the id attribute 
+    for all other classes in the project.
     """
 
     __nb_objects = 0
@@ -12,7 +13,8 @@ class Base:
         Initializes an instance of the Base class.
 
         Args:
-            id (int): The ID value for the instance. If not provided, a unique ID will be assigned.
+            id (int): The ID value for the instance. If not provided, 
+            a unique ID will be assigned.
 
         Attributes:
             id (int): The ID value assigned to the instance.
