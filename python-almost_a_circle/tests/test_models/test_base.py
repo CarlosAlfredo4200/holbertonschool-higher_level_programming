@@ -13,13 +13,13 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base2.id, 2)
         self.assertEqual(base3.id, 89)
 
-    # def test_base_to_json_string_none(self):
-    #     json_string = Base.to_json_string(None)
-    #     self.assertEqual(json_string, "[]")
+    def test_base_to_json_string_none(self):
+        json_string = Base.to_json_string(None)
+        self.assertEqual(json_string, "[]")
 
-    # def test_base_to_json_string_empty_list(self):
-    #     json_string = Base.to_json_string([])
-    #     self.assertEqual(json_string, "[]")
+    def test_base_to_json_string_empty_list(self):
+        json_string = Base.to_json_string([])
+        self.assertEqual(json_string, "[]")
 
     # def test_base_to_json_string_with_data(self):
     #     json_string = Base.to_json_string([{'id': 12}])
