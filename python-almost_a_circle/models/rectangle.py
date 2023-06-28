@@ -24,6 +24,11 @@ class Rectangle(Base):
         self.x = x
         self.y = y
 
+    
+    @staticmethod
+    def create(**kwargs):
+        return Rectangle(**kwargs)
+    
     @property
     def width(self):
         """
