@@ -14,11 +14,15 @@ class Rectangle(Base):
         """
         Initializes an instance of the Rectangle class.
         """
-        super().__init__(id)
-        self.width = width
-        self.height = height
-        self.x = x
-        self.y = y
+        if id is not None:
+            super().__init__(id)
+        else:
+            super().__init__()
+
+            self.width = width
+            self.height = height
+            self.x = x
+            self.y = y
 
     @property
     def width(self):
