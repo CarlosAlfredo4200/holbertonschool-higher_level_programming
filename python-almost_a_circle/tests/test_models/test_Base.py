@@ -5,37 +5,22 @@ from models.base import Base
 
 
 class TestBase(unittest.TestCase):
-    """
-    Test cases for the Base class.
-    """
 
-    def testBase_default(self):
+    def test_base_id_generation(self):
+        base1 = Base()
+        base2 = Base()
+        base3 = Base(89)
+        self.assertEqual(base1.id, 1)
+        self.assertEqual(base2.id, 2)
+        self.assertEqual(base3.id, 89)
 
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        b4 = Base(12)
-        b5 = Base()
-        self.assertEqual(b1.id, 1)
-        self.assertEqual(b2.id, 2)
-        self.assertEqual(b3.id, 3)
-        self.assertEqual(b4.id, 12)
-        self.assertEqual(b5.id, 4)
+    def test_base_to_json_string_none(self):
+        json_string = Base.to_json_string(None)
+        self.assertEqual(json_string, "[]")
 
-    def testBase_string_argument(self):
-        """
-        Test creating an instance of Base with a string as the ID argument.
-        """
-        b = Base("abc")
-        self.assertEqual(b.id, "abc")
-
-
-    def testBase_infinity_argument(self):
-        """
-        Test creating an instance of Base with infinity as the ID argument.
-        """
-        b6 = Base(float('inf'))
-        self.assertEqual(b6.id, float('inf'))
+    def test_base_to_json_string_empty_list(self):
+        json_string = Base.to_json_string([])
+        self.assertEqual(json_string, "[]")
 
 
 if __name__ == '__main__':

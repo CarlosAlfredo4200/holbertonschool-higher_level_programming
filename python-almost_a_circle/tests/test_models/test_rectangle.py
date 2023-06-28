@@ -75,6 +75,27 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(5, 10, 1, -2)
 
+    # ----------------
+
+    def testRectangle_area(self):
+        """
+        Test the area method of Rectangle.
+        """
+        r = Rectangle(5, 10)
+        self.assertEqual(r.area(), 50)
+
+    def testRectangle_area_with_negative_values(self):
+        """
+        Test the area method of Rectangle with negative width or height values.
+        """
+        with self.assertRaises(ValueError):
+            r = Rectangle(-5, 10)
+            r.area()
+
+        with self.assertRaises(ValueError):
+            r = Rectangle(5, -10)
+            r.area()
+
 
 if __name__ == '__main__':
     unittest.main()
