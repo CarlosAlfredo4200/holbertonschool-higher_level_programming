@@ -13,7 +13,6 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """
         Initializes an instance of the Rectangle class.
-
         """
         super().__init__(id)
         self.width = width
@@ -32,7 +31,6 @@ class Rectangle(Base):
     def width(self, value):
         """
         Setter method for the width attribute.
-
         """
         if isinstance(value, int):
             if value > 0:
@@ -53,7 +51,6 @@ class Rectangle(Base):
     def height(self, value):
         """
         Setter method for the height attribute.
-
         """
         if isinstance(value, int):
             if value > 0:
@@ -74,7 +71,6 @@ class Rectangle(Base):
     def x(self, value):
         """
         Setter method for the x-coordinate attribute.
-
         """
         if isinstance(value, int):
             if value >= 0:
@@ -95,7 +91,6 @@ class Rectangle(Base):
     def y(self, value):
         """
         Setter method for the y-coordinate attribute.
-
         """
         if isinstance(value, int):
             if value >= 0:
@@ -104,7 +99,7 @@ class Rectangle(Base):
                 raise ValueError("y must be >= 0")
         else:
             raise TypeError("y must be an integer")
-        
+
     def area(self):
         """
         Calculates and returns the area of the Rectangle.

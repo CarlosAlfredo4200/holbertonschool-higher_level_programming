@@ -3,98 +3,71 @@
 import unittest
 from models.rectangle import Rectangle
 
+import unittest
+from models.rectangle import Rectangle
+
 
 class TestRectangle(unittest.TestCase):
-    """
-    Test cases for the Rectangle class.
-    """
 
-    def testRectangle_valid_arguments(self):
-        """
-        Test creating an instance of Rectangle with valid arguments.
-        """
-        r = Rectangle(5, 10, 1, 2)
-        self.assertEqual(r.width, 5)
-        self.assertEqual(r.height, 10)
-        self.assertEqual(r.x, 1)
-        self.assertEqual(r.y, 2)
+    def test_rectangle_creation(self):
+        rectangle = Rectangle(1, 2)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        self.assertEqual(rectangle.x, 0)
+        self.assertEqual(rectangle.y, 0)
+        self.assertIsNone(rectangle.id)
 
-    def testRectangle_invalid_width(self):
-        """
-        Test creating an instance of Rectangle with invalid width argument.
-        """
-        with self.assertRaises(TypeError):
-            Rectangle("invalid", 10, 1, 2)
+    def test_rectangle_creation_with_parameters(self):
+        rectangle = Rectangle(1, 2, x=3, y=4, id=5)
+        self.assertEqual(rectangle.width, 1)
+        self.assertEqual(rectangle.height, 2)
+        self.assertEqual(rectangle.x, 3)
+        self.assertEqual(rectangle.y, 4)
+        self.assertEqual(rectangle.id, 5)
 
-    def testRectangle_invalid_height(self):
-        """
-        Test creating an instance of Rectangle with invalid height argument.
-        """
-        with self.assertRaises(TypeError):
-            Rectangle(5, "invalid", 1, 2)
-
-    def testRectangle_invalid_x(self):
-        """
-        Test creating an instance of Rectangle with invalid x argument.
-        """
-        with self.assertRaises(TypeError):
-            Rectangle(5, 10, "invalid", 2)
-
-    def testRectangle_invalid_y(self):
-        """
-        Test creating an instance of Rectangle with invalid y argument.
-        """
-        with self.assertRaises(TypeError):
-            Rectangle(5, 10, 1, "invalid")
-
-    def testRectangle_zero_width(self):
-        """
-        Test creating an instance of Rectangle with zero width argument.
-        """
+    def test_rectangle_creation_with_invalid_width(self):
         with self.assertRaises(ValueError):
-            Rectangle(0, 10, 1, 2)
+            Rectangle("1", 2)
 
-    def testRectangle_zero_height(self):
-        """
-        Test creating an instance of Rectangle with zero height argument.
-        """
+    def test_rectangle_creation_with_invalid_height(self):
         with self.assertRaises(ValueError):
-            Rectangle(5, 0, 1, 2)
+            Rectangle(1, "2")
 
-    def testRectangle_negative_x(self):
-        """
-        Test creating an instance of Rectangle with negative x argument.
-        """
+    def test_rectangle_creation_with_invalid_x(self):
         with self.assertRaises(ValueError):
-            Rectangle(5, 10, -1, 2)
+            Rectangle(1, 2, x="3")
 
-    def testRectangle_negative_y(self):
-        """
-        Test creating an instance of Rectangle with negative y argument.
-        """
+    def test_rectangle_creation_with_invalid_y(self):
         with self.assertRaises(ValueError):
-            Rectangle(5, 10, 1, -2)
+            Rectangle(1, 2, y="4")
 
-    # ----------------
-
-    def testRectangle_area(self):
-        """
-        Test the area method of Rectangle.
-        """
-        r = Rectangle(5, 10)
-        self.assertEqual(r.area(), 50)
-
-    def testRectangle_area_with_negative_values(self):
-        """
-        Test the area method of Rectangle with negative width or height values.
-        """
+    def test_rectangle_creation_with_negative_width(self):
         with self.assertRaises(ValueError):
-            r = Rectangle(-5, 10)
-            r.area()
+            Rectangle(-1, 2)
 
+    def test_rectangle_creation_with_negative_height(self):
         with self.assertRaises(ValueError):
-            r = Rectangle(5, -10)
-            r.area()
+            Rectangle(1, -2)
+
+    def test_rectangle_creation_with_zero_width(self):
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_rectangle_creation_with_zero_height(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_rectangle_creation_with_negative_x(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, x=-3)
+
+    def test_rectangle_creation_with_negative_y(self):
+        with self.assertRaises(ValueError):
+            Rectangle(1, 2, y=-4)
+
+    def test_rectangle_area(self):
+        rectangle = Rectangle(3, 4)
+        self.assertEqual(rectangle.area(), 12)
 
 
 if __name__ == '__main__':
