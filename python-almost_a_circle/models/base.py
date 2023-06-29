@@ -58,19 +58,37 @@ class Base:
             dummy_instance = cls(1, 1)
         elif cls.__name__ == "Square":
             dummy_instance = cls(1)
-
+        else:
+            dummy_instance = None
         dummy_instance.update(**dictionary)
         return dummy_instance
 
-    def update(self, *args, **kwargs):
-        """
-        Updates the attributes of the instance.
-        """
-        if args:
-            attr_names = ['id', 'width', 'height', 'size', 'x', 'y']
-            for attr, value in zip(attr_names, args):
-                setattr(self, attr, value)
+    # def update(self, *args, **kwargs):
+    #     """
+    #     Updates the attributes of the instance.
+    #     """
+    #     if args:
+    #         attr_names = ['id', 'width', 'height', 'size', 'x', 'y']
+    #         for attr, value in zip(attr_names, args):
+    #             setattr(self, attr, value)
 
-        if kwargs:
-            for attr, value in kwargs.items():
-                setattr(self, attr, value)
+    #     if kwargs:
+    #         for attr, value in kwargs.items():
+    #             setattr(self, attr, value)
+
+    @classmethod
+    def load_from_file(cls):
+        """
+        Returns a list of instances loaded from a file.
+        """
+        filename = cls.__name__ + ".json"
+
+        try:
+            with open(filename, 'r') as file:
+                json_string = file.read()
+                dictionaries = cls.from_json_string(json_string)
+                instances = [cls.create(**dictionary)
+                             for dictionary in dictionaries]
+                return instances
+        except FileNotFoundError:
+            return []
