@@ -27,13 +27,6 @@ class Base:
             return "[]"
         return json.dumps(list_dictionaries)
 
-    @staticmethod
-    def from_json_string(json_string):
-        import json
-        if json_string is None or len(json_string) == 0:
-            return []
-        return json.loads(json_string)
-
     @classmethod
     def save_to_file(cls, list_objs):
         """
@@ -49,6 +42,13 @@ class Base:
         with open(filename, 'w') as file:
             file.write(json_string)
 
+    @staticmethod
+    def from_json_string(json_string):
+        import json
+        if json_string is None or len(json_string) == 0:
+            return []
+        return json.loads(json_string)
+
     @classmethod
     def create(cls, **dictionary):
         """
@@ -62,19 +62,6 @@ class Base:
             dummy_instance = None
         dummy_instance.update(**dictionary)
         return dummy_instance
-
-    # def update(self, *args, **kwargs):
-    #     """
-    #     Updates the attributes of the instance.
-    #     """
-    #     if args:
-    #         attr_names = ['id', 'width', 'height', 'size', 'x', 'y']
-    #         for attr, value in zip(attr_names, args):
-    #             setattr(self, attr, value)
-
-    #     if kwargs:
-    #         for attr, value in kwargs.items():
-    #             setattr(self, attr, value)
 
     @classmethod
     def load_from_file(cls):
