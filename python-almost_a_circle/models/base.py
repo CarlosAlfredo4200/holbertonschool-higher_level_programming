@@ -61,3 +61,16 @@ class Base:
 
         dummy_instance.update(**dictionary)
         return dummy_instance
+
+    def update(self, *args, **kwargs):
+        """
+        Updates the attributes of the instance.
+        """
+        if args:
+            attr_names = ['id', 'width', 'height', 'size', 'x', 'y']
+            for attr, value in zip(attr_names, args):
+                setattr(self, attr, value)
+
+        if kwargs:
+            for attr, value in kwargs.items():
+                setattr(self, attr, value)
