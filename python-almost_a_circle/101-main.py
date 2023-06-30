@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 """Define the Base Class"""
+
 import turtle
+from turtle import *
 
 
 class Base:
@@ -63,34 +65,35 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        # Create a Turtle screen
-        screen = turtle.Screen()
+        turtle.reset()
+        turtleDraw = turtle.Turtle()
+        turtleDraw.screen.bgcolor("#888888")
+        turtleDraw.pensize(3)
 
-        # Create a Turtle object
-        t = turtle.Turtle()
+        turtleDraw.color("#FFA500")
+        for rect in list_rectangles:
+            turtleDraw.showturtle()
+            turtleDraw.up()
+            turtleDraw.goto(rect.x, rect.y)
+            turtleDraw.down()
+            for i in range(2):
+                turtleDraw.forward(rect.width)
+                turtleDraw.left(90)
+                turtleDraw.forward(rect.height)
+                turtleDraw.left(90)
+            turtleDraw.hideturtle()
 
-        # Set the speed of the turtle
-        t.speed(2)
-
-        # Draw rectangles
-        for rectangle in list_rectangles:
-            t.penup()
-            t.goto(rectangle.x, rectangle.y)
-            t.pendown()
-            for _ in range(2):
-                t.forward(rectangle.width)
-                t.left(90)
-                t.forward(rectangle.height)
-                t.left(90)
-
-        # Draw squares
+        turtleDraw.color("#b5e3d8")
         for square in list_squares:
-            t.penup()
-            t.goto(square.x, square.y)
-            t.pendown()
-            for _ in range(4):
-                t.forward(square.size)
-                t.left(90)
+            turtleDraw.showturtle()
+            turtleDraw.up()
+            turtleDraw.goto(square.x, square.y)
+            turtleDraw.down()
+            for i in range(2):
+                turtleDraw.forward(square.width)
+                turtleDraw.right(-90)
+                turtleDraw.forward(square.height)
+                turtleDraw.right(-90)
+            turtleDraw.hideturtle()
 
-        # Close the Turtle graphics window
-        turtle.done()
+        turtle.exitonclick()
