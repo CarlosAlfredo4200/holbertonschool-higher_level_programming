@@ -51,24 +51,24 @@ class TestBase(unittest.TestCase):
 
 class TestToJsonString(unittest.TestCase):
     def test_to_json_string_empty_list(self):
-        # Prueba cuando se pasa una lista vacía
+
         result = Base.to_json_string([])
         self.assertEqual(result, "[]")
 
     def test_to_json_string_none(self):
-        # Prueba cuando se pasa None como argumento
+
         result = Base.to_json_string(None)
         self.assertEqual(result, "[]")
 
     def test_to_json_string_single_dict(self):
-        # Prueba cuando se pasa una lista con un solo diccionario
+
         input_list = [{'name': 'John', 'age': 30}]
         expected_result = json.dumps(input_list)
         result = Base.to_json_string(input_list)
         self.assertEqual(result, expected_result)
 
     def test_to_json_string_multiple_dicts(self):
-        # Prueba cuando se pasa una lista con varios diccionarios
+
         input_list = [{'name': 'John', 'age': 30}, {'name': 'Jane', 'age': 25}]
         expected_result = json.dumps(input_list)
         result = Base.to_json_string(input_list)
@@ -179,16 +179,15 @@ class TestSquare(unittest.TestCase):
         square2 = Square(7, 4, 5, 2)
         squares = [square1, square2]
 
-        # Guardar los objetos Square en un archivo JSON
+
         filename = "Square.json"
         with open(filename, "w") as jsonfile:
             jsonfile.write(Square.to_json_string(
                 [square.to_dictionary() for square in squares]))
 
-        # Cargar los objetos Square desde el archivo JSON
+
         loaded_squares = Square.load_from_file()
 
-        # Verificar que se hayan cargado los objetos correctamente
         self.assertEqual(len(loaded_squares), 2)
         self.assertIsInstance(loaded_squares[0], Square)
         self.assertIsInstance(loaded_squares[1], Square)

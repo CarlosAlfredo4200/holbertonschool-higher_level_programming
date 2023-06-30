@@ -66,7 +66,7 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(5, 1, 2, 4, 7)
         with self.assertRaises(TypeError):
             r.display(1)
-    
+
     def test_rectangle_display_without_x_y(self):
         rectangle = Rectangle(5, 3)
         expected_output = "#####\n#####\n#####\n"
